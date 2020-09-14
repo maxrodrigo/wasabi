@@ -16,16 +16,35 @@
 
 #include QMK_KEYBOARD_H
 
+#define LAYER_INDICATOR_PIN E6
+
 #define _BL 0
 #define _FL 1
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BL] = LAYOUT(
-        KC_MPRV, KC_MPLY, KC_MNXT, TG(1),
-        KC_VOLD, KC_MUTE, KC_VOLU, KC_NO
-    ),
-    [_FL] = LAYOUT(
-        KC_WAKE, KC_SLEP, KC_PWR, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-    )
+  [_BL] = LAYOUT(
+      KC_MPRV, KC_MPLY, KC_MNXT, TG(1),
+      KC_VOLD, KC_MUTE, KC_VOLU, KC_NO
+      ),
+  [_FL] = LAYOUT(
+      KC_WAKE, KC_SLEP, KC_PWR, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+      )
 };
+
+void keyboard_pre_init_user(void)
+{
+  setPinOutput(LAYER_INDICATOR_PIN);
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  switch (get_highest_layer(state)) {
+    case _FL:
+      writePinHigh(LAYER_INDICATOR_PIN);
+      break;
+    default:
+      writePinLow(LAYER_INDICATOR_PIN);
+      break;
+  }
+  return state;
+}

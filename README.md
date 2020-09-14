@@ -26,7 +26,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
                 PD4 |                 | PF6
                 PC6 |                 | PF7
                 PD7 |                 | PB1 +---> COL 1
-                PE6 |                 | PB3 +---> COL 2
+      LED <---+ PE6 |                 | PB3 +---> COL 2
     ROW 2 <---+ PB4 |                 | PB2 +---> COL 3
     ROW 1 <---+ PB5 |    Pro Micro    | PB6 +---> COL 4
                     +-----------------+
