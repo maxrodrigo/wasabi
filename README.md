@@ -1,6 +1,6 @@
 # Wasabi
 
-1 row 4 columns Media Keypad
+2 row 4 columns Media Keypad
 
 - Keyboard Maintainer: [Max Rodrigo](https://github.com/maxrodrigo)
 - Hardware Supported: Arduino Pro Micro
@@ -27,7 +27,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
                 PC6 |                 | PF7
                 PD7 |                 | PB1 +---> COL 1
                 PE6 |                 | PB3 +---> COL 2
-                PB4 |                 | PB2 +---> COL 3
+    ROW 2 <---+ PB4 |                 | PB2 +---> COL 3
     ROW 1 <---+ PB5 |    Pro Micro    | PB6 +---> COL 4
                     +-----------------+
 ```
