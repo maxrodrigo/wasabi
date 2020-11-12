@@ -1,5 +1,7 @@
 # Wasabi
 
+![](images/latest.jpg)
+
 2 row 4 columns Media Keypad
 
 - Keyboard Maintainer: [Max Rodrigo](https://github.com/maxrodrigo)
